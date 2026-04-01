@@ -1,1 +1,20 @@
-
+[
+  {
+    "date": "2026-03-30",
+    "start": "09:00",
+    "end": "10:30",
+    "title": "Lecture",
+    "location": "GP201",
+    "groupType": "all",
+    "groupValue": "all"
+  },
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL A"
+  }
+]
