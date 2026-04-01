@@ -1,1 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEDI Timetable</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#0f172a" />
+</head>
+<body>
+  <main class="app">
+    <h1>MEDI Timetable</h1>
 
+    <section class="card">
+      <label for="groupSelect">Your group</label>
+      <select id="groupSelect"></select>
+    </section>
+
+    <section class="card">
+      <button id="nextBtn">Next class</button>
+      <div id="nextResult"></div>
+    </section>
+
+    <section class="card">
+      <button id="todayBtn">Today's classes</button>
+      <div id="todayResult"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
