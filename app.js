@@ -4,7 +4,7 @@ const defaultProfile = {
   campus: "Callaghan",
   year: 1,
   pblGroup: "A",
-  clinicalGroup: "C"
+  clinicalGroup: "A"
 };
 
 let userProfile = loadProfile();
