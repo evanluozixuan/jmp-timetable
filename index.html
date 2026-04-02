@@ -1,21 +1,35 @@
-<section class="card">
-  <details id="filtersPanel" open>
-    <summary><strong>Filters</strong></summary>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jmp timetable</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="theme-color" content="#0f172a" />
+</head>
+<body>
+  <main class="app">
+    <h1>jmp timetable</h1>
+    <h5>by evan</h5>
 
-    <div class="filtersContent">
+    <section class="card">
       <label for="campusSelect">campus</label>
+      
       <select id="campusSelect">
         <option value="Callaghan">callaghan</option>
         <option value="Central Coast">central coast</option>
       </select>
 
       <label for="yearSelect">year</label>
+      
       <select id="yearSelect">
         <option value="1">year 1</option>
         <option value="2">year 2</option>
       </select>
 
       <label for="pblSelect">pbl group</label>
+      
       <select id="pblSelect">
         <option value="A">a</option>
         <option value="B">b</option>
@@ -40,6 +54,7 @@
       </select>
 
       <label for="clinicalSelect">clinical group</label>
+      
       <select id="clinicalSelect">
         <option value="A">a</option>
         <option value="B">b</option>
@@ -85,6 +100,19 @@
 
       <button id="saveFiltersBtn">Save filters</button>
       <p id="saveStatus"></p>
-    </div>
-  </details>
-</section>
+    </section>
+
+    <section class="card">
+      <h2>Next class</h2>
+      <div id="nextResult"></div>
+    </section>
+
+    <section class="card">
+      <h2>Today's classes</h2>
+      <div id="todayResult"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html></html>
