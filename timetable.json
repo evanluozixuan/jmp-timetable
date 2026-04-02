@@ -1,46 +1,38 @@
 [
   {
-    "campus": "Gosford",
-    "year": "1"
     "date": "2026-04-02",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL A"
+    "start": "09:00",
+    "end": "10:00",
+    "title": "Anatomy Lecture",
+    "type": "Lecture",
+    "location": "LT2",
+    "campus": ["Callaghan", "Gosford"],
+    "year": [1, 2],
+    "pblGroups": ["A", "B"],
+    "clinicalGroups": ["C", "D"]
   },
   {
-    "campus": "Gosford",
-    "year": "2"
     "date": "2026-04-02",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL A"
+    "start": "11:00",
+    "end": "12:30",
+    "title": "PBL Session",
+    "type": "PBL",
+    "location": "PBL Room 1",
+    "campus": ["Callaghan"],
+    "year": [1],
+    "pblGroups": ["A"],
+    "clinicalGroups": ["C", "D"]
   },
   {
-    "campus": "Callaghan",
-    "year": "1"
     "date": "2026-04-02",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL A"
-  },
-  {
-    "campus": "Callaghan",
-    "year": 2,
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL B"
+    "start": "14:00",
+    "end": "15:30",
+    "title": "Clinical Skills",
+    "type": "Clinical",
+    "location": "Skills Lab",
+    "campus": ["Gosford"],
+    "year": [2],
+    "pblGroups": ["A", "B"],
+    "clinicalGroups": ["D"]
   }
 ]
