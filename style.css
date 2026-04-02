@@ -49,9 +49,6 @@ button, select {
   max-height: 0;
   margin: 0;
   padding: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
   transition: max-height 1s ease-out;
 }
 
