@@ -281,8 +281,6 @@ function refreshResults() {
 }
 
 document.getElementById("saveFiltersBtn").addEventListener("click", saveProfile);
-document.getElementById("todayBtn").addEventListener("click", showTodaysClasses);
-document.getElementById("nextBtn").addEventListener("click", showNextClass);
 
 loadTimetable();
 
