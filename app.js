@@ -121,13 +121,11 @@ function getNextUpcomingClass() {
 function renderSession(item) {
   return `
     <div class="session">
-      <strong>${item.title}</strong><br>
-      ${item.type}<br>
+      <strong>${item.title} ${item.type}<br></strong><br>
       ${item.date}<br>
-      ${item.start}–${item.end}<br>
+      ${item.start} – ${item.end}<br>
       ${item.location}<br>
-      ${item.campus}<br>
-      Attendance: ${item.attendance}
+      ${item.attendance}<br>
     </div>
   `;
 }
