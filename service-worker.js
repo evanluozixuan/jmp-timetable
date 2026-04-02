@@ -1,4 +1,4 @@
-const CACHE_NAME = "medi-timetable-v1";
+const CACHE_NAME = "jmp-timetable-v1";
 const URLS_TO_CACHE = [
   "./",
   "./index.html",
