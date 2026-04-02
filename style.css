@@ -46,7 +46,7 @@ button, select {
 
 .collapsible-content {
   overflow: hidden;
-  max-height: 12;
+  max-height: 0;
   transition: max-height 1s ease-out;
 }
 
