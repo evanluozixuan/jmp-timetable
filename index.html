@@ -115,18 +115,19 @@
 
   <script src="./app.js"></script>
   <script>
-    const coll = document.getElementById("filtersToggleBtn");
-    const content = document.getElementById("filtersCard");
+  const coll = document.getElementById("filtersToggleBtn");
+  const content = document.getElementById("filtersCard");
 
-    coll.addEventListener("click", function () {
-      this.classList.toggle("active");
+  coll.addEventListener("click", function () {
+    this.classList.toggle("active");
+    content.classList.toggle("open");
 
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-  </script>
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+</script>
 </body>
 </html>
