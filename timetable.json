@@ -1,5 +1,7 @@
 [
   {
+    "campus": "Gosford",
+    "year": "1"
     "date": "2026-04-02",
     "start": "13:30",
     "end": "15:00",
@@ -9,6 +11,30 @@
     "groupValue": "PBL A"
   },
   {
+    "campus": "Gosford",
+    "year": "2"
+    "date": "2026-04-02",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL A"
+  },
+  {
+    "campus": "Callaghan",
+    "year": "1"
+    "date": "2026-04-02",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL A"
+  },
+  {
+    "campus": "Callaghan",
+    "year": 2,
     "date": "2026-03-30",
     "start": "13:30",
     "end": "15:00",
@@ -16,77 +42,5 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL B"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL C"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL D"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL E"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL F"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL G"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL H"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL I"
-  },
-  {
-    "date": "2026-03-30",
-    "start": "13:30",
-    "end": "15:00",
-    "title": "Tutorial",
-    "location": "CT224",
-    "groupType": "pbl",
-    "groupValue": "PBL J"
   }
 ]
