@@ -121,7 +121,7 @@ function getNextUpcomingClass() {
 function renderSession(item) {
   return `
     <div class="session">
-      <strong>${item.title} ${item.type}<br></strong><br>
+      <strong>${item.title} ${item.type}</strong><br>
       ${item.date}<br>
       ${item.start} – ${item.end}<br>
       ${item.location}<br>
