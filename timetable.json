@@ -1,8 +1,8 @@
 [
   {
     "date": "2026-04-02",
-    "start": "09:00",
-    "end": "10:00",
+    "start": "20:00",
+    "end": "22:00",
     "title": "Anatomy Lecture",
     "type": "Lecture",
     "location": "LT2",
@@ -13,8 +13,8 @@
   },
   {
     "date": "2026-04-02",
-    "start": "11:00",
-    "end": "12:30",
+    "start": "19:00",
+    "end": "20:30",
     "title": "PBL Session",
     "type": "PBL",
     "location": "PBL Room 1",
@@ -25,8 +25,8 @@
   },
   {
     "date": "2026-04-02",
-    "start": "14:00",
-    "end": "15:30",
+    "start": "16:00",
+    "end": "18:30",
     "title": "Clinical Skills",
     "type": "Clinical",
     "location": "Skills Lab",
