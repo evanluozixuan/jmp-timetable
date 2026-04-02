@@ -50,8 +50,13 @@ function saveProfile() {
   userProfile = getCurrentProfileFromUI();
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
   document.getElementById("saveStatus").textContent = "Filters saved.";
-  document.getElementById("filtersPanel").open = false;
   refreshResults();
+
+  const toggleBtn = document.getElementById("filtersToggleBtn");
+  const filtersCard = document.getElementById("filtersCard");
+
+  toggleBtn.classList.remove("active");
+  filtersCard.style.maxHeight = null;
 }
 
 function populateFilterUI() {
