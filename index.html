@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>jmp timetable</title>
+  <title>JMP Timetable</title>
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
   <meta name="theme-color" content="#0f172a" />
 </head>
 <body>
   <main class="app">
-    <header class="app-header">
-      <h1>jmp timetable</h1>
-      <p class="subtitle">by evan</p>
-    </header>
+    <h1>jmp timetable</h1>
+    <h4>by evan</h4>
 
-    <button class="collapsible" id="filtersToggleBtn" type="button" aria-expanded="false">
-      filters
-    </button>
+    <button class="collapsible" id="filtersToggleBtn" type="button">filters</button>
 
     <div class="collapsible-content" id="filtersCard">
-      <section class="card">
+      <select class="card">
         <label for="campusSelect">campus</label>
         <select id="campusSelect">
           <option value="Callaghan">callaghan</option>
@@ -101,8 +97,8 @@
           <option value="20">20</option>
         </select>
 
-        <button id="saveFiltersBtn" type="button">Save Filters</button>
-        <p id="saveStatus" class="save-status"></p>
+        <button id="saveFiltersBtn" type="button">save filters</button>
+        <p id="saveStatus"></p>
       </section>
     </div>
 
@@ -112,7 +108,7 @@
     </section>
 
     <section class="card">
-      <h2>today’s classes</h2>
+      <h2>today's classes</h2>
       <div id="todayResult"></div>
     </section>
   </main>
@@ -125,7 +121,6 @@
     coll.addEventListener("click", function () {
       const isOpen = content.classList.toggle("open");
       this.classList.toggle("active", isOpen);
-      this.setAttribute("aria-expanded", String(isOpen));
 
       if (isOpen) {
         content.style.maxHeight = content.scrollHeight + "px";
