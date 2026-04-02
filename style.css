@@ -58,15 +58,18 @@ button, select {
 
 .filters-card-inner {
   transform-origin: top;
+  opacity: 0;
   transform: scaleY(1);
   border-radius: 16px;
   margin: 0 0 16px 0;
   transition:
     transform 1s ease,
+    opacity 1s ease,
     border-radius 1s ease;
 }
 
 .collapsible-content.open .filters-card-inner {
+  opacity: 1;
   transform: scaleY(1);
   border-radius: 16px;
 }
