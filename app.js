@@ -51,13 +51,6 @@ function saveProfile() {
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
   document.getElementById("saveStatus").textContent = "Filters saved.";
   refreshResults();
-
-  const toggleBtn = document.getElementById("filtersToggleBtn");
-  const filtersCard = document.getElementById("filtersCard");
-
-  toggleBtn.classList.remove("active");
-  filtersCard.classList.remove("open");
-  filtersCard.style.maxHeight = null;
 }
 
 function populateFilterUI() {
@@ -137,8 +130,7 @@ function getNextUpcomingClass() {
 function renderSession(item) {
   return `
     <div class="session">
-      <strong>${item.title}</strong><br>
-      ${item.type}<br>
+      <strong>${item.title} ${item.type}</strong><br>
       ${item.date}<br>
       ${item.start}–${item.end}<br>
       ${item.location}<br>
@@ -177,10 +169,118 @@ function refreshResults() {
 }
 
 document.getElementById("saveFiltersBtn").addEventListener("click", saveProfile);
+
 document.getElementById("campusSelect").addEventListener("change", handleFilterChange);
 document.getElementById("yearSelect").addEventListener("change", handleFilterChange);
 document.getElementById("pblSelect").addEventListener("change", handleFilterChange);
 document.getElementById("clinicalSelect").addEventListener("change", handleFilterChange);
+
+loadTimetable();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(err => {
+      console.error("Service worker registration failed:", err);
+    });
+  });
+}  return `${year}-${month}-${day}`;
+}
+
+function getNowMinutes() {
+  const now = new Date();
+  return now.getHours() * 60 + now.getMinutes();
+}
+
+function timeToMinutes(t) {
+  const [h, m] = t.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function matchesWildcard(value, selectedValue) {
+  return value === "all" || value === selectedValue;
+}
+
+function matchesProfile(item, profile) {
+  const campusOk = item.campus === profile.campus;
+  const yearOk = Number(item.year) === Number(profile.year);
+  const pblOk = matchesWildcard(item.pblGroups, profile.pblGroup);
+  const clinicalOk = matchesWildcard(item.clinicalGroups, profile.clinicalGroup);
+
+  return campusOk && yearOk && pblOk && clinicalOk;
+}
+
+function getFilteredClasses() {
+  return timetable.filter(item => matchesProfile(item, userProfile));
+}
+
+function getTodaysClasses() {
+  const today = getTodayString();
+
+  return getFilteredClasses()
+    .filter(item => item.date === today)
+    .sort((a, b) => timeToMinutes(a.start) - timeToMinutes(b.start));
+}
+
+function getNextUpcomingClass() {
+  const today = getTodayString();
+  const nowMinutes = getNowMinutes();
+
+  const filtered = getFilteredClasses().sort((a, b) => {
+    const dateCompare = a.date.localeCompare(b.date);
+    if (dateCompare !== 0) return dateCompare;
+    return timeToMinutes(a.start) - timeToMinutes(b.start);
+  });
+
+  for (const item of filtered) {
+    if (item.date > today) return item;
+    if (item.date === today && timeToMinutes(item.start) >= nowMinutes) return item;
+  }
+
+  return null;
+}
+
+function renderSession(item) {
+  return `
+    <div class="session">
+      <strong>${item.title} ${item.type}</strong><br>
+      ${item.date}<br>
+      ${item.start}–${item.end}<br>
+      ${item.location}<br>
+      ${item.attendance}<br>
+    </div>
+  `;
+}
+
+function showTodaysClasses() {
+  const todayResult = document.getElementById("todayResult");
+  const todays = getTodaysClasses();
+
+  if (todays.length === 0) {
+    todayResult.innerHTML = "<p>No classes today for your selected filters.</p>";
+    return;
+  }
+
+  todayResult.innerHTML = todays.map(renderSession).join("");
+}
+
+function showNextClass() {
+  const nextResult = document.getElementById("nextResult");
+  const next = getNextUpcomingClass();
+
+  if (!next) {
+    nextResult.innerHTML = "<p>No upcoming classes found for your selected filters.</p>";
+    return;
+  }
+
+  nextResult.innerHTML = renderSession(next);
+}
+
+function refreshResults() {
+  showNextClass();
+  showTodaysClasses();
+}
+
+document.getElementById("saveFiltersBtn").addEventListener("click", saveProfile);
 
 loadTimetable();
 
