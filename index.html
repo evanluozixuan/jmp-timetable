@@ -10,25 +10,29 @@
 </head>
 <body>
   <main class="app">
-    <h1>jmp timetable</h1>
-    <h5>by evan</h5>
+    <header class="app-header">
+      <h1>jmp timetable</h1>
+      <p class="subtitle">by evan</p>
+    </header>
 
-    <button class="collapsible" id="filtersToggleBtn" type="button">filters</button>
+    <button class="collapsible" id="filtersToggleBtn" type="button" aria-expanded="false">
+      filters
+    </button>
 
     <div class="collapsible-content" id="filtersCard">
-      <div class="card">
+      <section class="card">
         <label for="campusSelect">campus</label>
         <select id="campusSelect">
           <option value="Callaghan">callaghan</option>
           <option value="Central Coast">central coast</option>
         </select>
-  
+
         <label for="yearSelect">year</label>
         <select id="yearSelect">
-          <option value="1">year 1</option>
-          <option value="2">year 2</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
         </select>
-  
+
         <label for="pblSelect">pbl group</label>
         <select id="pblSelect">
           <option value="A">a</option>
@@ -52,7 +56,7 @@
           <option value="S">s</option>
           <option value="T">t</option>
         </select>
-  
+
         <label for="clinicalSelect">clinical group</label>
         <select id="clinicalSelect">
           <option value="A">a</option>
@@ -96,38 +100,39 @@
           <option value="19">19</option>
           <option value="20">20</option>
         </select>
-  
-        <button id="saveFiltersBtn" type="button">Save filters</button>
-        <p id="saveStatus"></p>
-      </div>
+
+        <button id="saveFiltersBtn" type="button">Save Filters</button>
+        <p id="saveStatus" class="save-status"></p>
+      </section>
     </div>
 
     <section class="card">
-      <h2>Next class</h2>
+      <h2>next class</h2>
       <div id="nextResult"></div>
     </section>
 
     <section class="card">
-      <h2>Today's classes</h2>
+      <h2>today’s classes</h2>
       <div id="todayResult"></div>
     </section>
   </main>
 
   <script src="./app.js"></script>
   <script>
-  const coll = document.getElementById("filtersToggleBtn");
-  const content = document.getElementById("filtersCard");
+    const coll = document.getElementById("filtersToggleBtn");
+    const content = document.getElementById("filtersCard");
 
-  coll.addEventListener("click", function () {
-    this.classList.toggle("active");
-    content.classList.toggle("open");
+    coll.addEventListener("click", function () {
+      const isOpen = content.classList.toggle("open");
+      this.classList.toggle("active", isOpen);
+      this.setAttribute("aria-expanded", String(isOpen));
 
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-</script>
+      if (isOpen) {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  </script>
 </body>
 </html>
