@@ -32,3 +32,24 @@ button, select {
   border-radius: 12px;
   background: #eef2ff;
 }
+
+.collapsible {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 16px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.collapsible-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease-out;
+}
+
+.collapsible.active {
+  margin-bottom: 12px;
+}
