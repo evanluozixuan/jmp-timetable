@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-04-02",
+    "start": "13:52",
+    "end": "14:00",
+    "title": "Histology Lecture",
+    "type": "Lecture",
+    "location": "LT2",
+    "campus": ["Callaghan", "Gosford"],
+    "year": [1, 2],
+    "pblGroups": ["A", "B"],
+    "clinicalGroups": ["C", "D"]
+  },
+  {
+    "date": "2026-04-02",
     "start": "20:00",
     "end": "22:00",
     "title": "Anatomy Lecture",
