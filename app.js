@@ -14,6 +14,7 @@ async function loadTimetable() {
     const res = await fetch("./timetable.json");
     timetable = await res.json();
     populateFilterUI();
+    refreshResults();
   } catch (err) {
     console.error("Failed to load timetable:", err);
   }
@@ -37,22 +38,16 @@ function loadProfile() {
 }
 
 function saveProfile() {
-  const campus = document.getElementById("campusSelect").value;
-  const year = Number(document.getElementById("yearSelect").value);
-  const pblGroup = document.getElementById("pblSelect").value;
-  const clinicalGroup = document.getElementById("clinicalSelect").value;
-
   userProfile = {
-    campus,
-    year,
-    pblGroup,
-    clinicalGroup
+    campus: document.getElementById("campusSelect").value,
+    year: Number(document.getElementById("yearSelect").value),
+    pblGroup: document.getElementById("pblSelect").value,
+    clinicalGroup: document.getElementById("clinicalSelect").value
   };
 
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
-
-  const saveStatus = document.getElementById("saveStatus");
-  saveStatus.textContent = "Filters saved.";
+  document.getElementById("saveStatus").textContent = "Filters saved.";
+  refreshResults();
 }
 
 function populateFilterUI() {
@@ -70,29 +65,25 @@ function getTodayString() {
   return `${year}-${month}-${day}`;
 }
 
-function timeToMinutes(t) {
-  const [h, m] = t.split(":").map(Number);
-  return h * 60 + m;
-}
-
 function getNowMinutes() {
   const now = new Date();
   return now.getHours() * 60 + now.getMinutes();
 }
 
+function timeToMinutes(t) {
+  const [h, m] = t.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function includesFilter(values, selectedValue) {
+  return Array.isArray(values) && values.includes(selectedValue);
+}
+
 function matchesProfile(item, profile) {
-  const campusOk =
-    Array.isArray(item.campus) && item.campus.includes(profile.campus);
-
-  const yearOk =
-    Array.isArray(item.year) && item.year.includes(profile.year);
-
-  const pblOk =
-    Array.isArray(item.pblGroups) && item.pblGroups.includes(profile.pblGroup);
-
-  const clinicalOk =
-    Array.isArray(item.clinicalGroups) &&
-    item.clinicalGroups.includes(profile.clinicalGroup);
+  const campusOk = includesFilter(item.campus, profile.campus);
+  const yearOk = Array.isArray(item.year) && item.year.includes(profile.year);
+  const pblOk = includesFilter(item.pblGroups, profile.pblGroup);
+  const clinicalOk = includesFilter(item.clinicalGroups, profile.clinicalGroup);
 
   return campusOk && yearOk && pblOk && clinicalOk;
 }
@@ -109,16 +100,9 @@ function getTodaysClasses() {
     .sort((a, b) => timeToMinutes(a.start) - timeToMinutes(b.start));
 }
 
-function getNextClassToday() {
-  const nowMinutes = getNowMinutes();
-  const todays = getTodaysClasses();
-
-  return todays.find(item => timeToMinutes(item.start) >= nowMinutes) || null;
-}
-
 function getNextUpcomingClass() {
-  const nowMinutes = getNowMinutes();
   const today = getTodayString();
+  const nowMinutes = getNowMinutes();
 
   const filtered = getFilteredClasses().sort((a, b) => {
     const dateCompare = a.date.localeCompare(b.date);
@@ -151,7 +135,7 @@ function showTodaysClasses() {
   const todays = getTodaysClasses();
 
   if (todays.length === 0) {
-    todayResult.innerHTML = "<p>No classes today.</p>";
+    todayResult.innerHTML = "<p>No classes today for your selected filters.</p>";
     return;
   }
 
@@ -163,11 +147,16 @@ function showNextClass() {
   const next = getNextUpcomingClass();
 
   if (!next) {
-    nextResult.innerHTML = "<p>No upcoming classes found.</p>";
+    nextResult.innerHTML = "<p>No upcoming classes found for your selected filters.</p>";
     return;
   }
 
   nextResult.innerHTML = renderSession(next);
+}
+
+function refreshResults() {
+  showNextClass();
+  showTodaysClasses();
 }
 
 document.getElementById("saveFiltersBtn").addEventListener("click", saveProfile);
@@ -181,72 +170,5 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./service-worker.js").catch(err => {
       console.error("Service worker registration failed:", err);
     });
-  });
-}
-function timeToMinutes(t) {
-  const [h, m] = t.split(":").map(Number);
-  return h * 60 + m;
-}
-
-function filteredForUser(items) {
-  return items.filter(item => {
-    return item.groupValue === "all" || selectedGroup === "all" || item.groupValue === selectedGroup;
-  });
-}
-
-function getTodaysClasses() {
-  const today = getTodayString();
-  return filteredForUser(timetable)
-    .filter(item => item.date === today)
-    .sort((a, b) => timeToMinutes(a.start) - timeToMinutes(b.start));
-}
-
-function getNextClass() {
-  const nowMins = getNowMinutes();
-  const todays = getTodaysClasses();
-  return todays.find(item => timeToMinutes(item.start) >= nowMins) || null;
-}
-
-document.getElementById("todayBtn").addEventListener("click", () => {
-  const today = getTodaysClasses();
-  const el = document.getElementById("todayResult");
-
-  if (!today.length) {
-    el.innerHTML = "<p>No classes today.</p>";
-    return;
-  }
-
-  el.innerHTML = today.map(item => `
-    <div class="session">
-      <strong>${item.start}–${item.end}</strong><br>
-      ${item.title}<br>
-      ${item.location}
-    </div>
-  `).join("");
-});
-
-document.getElementById("nextBtn").addEventListener("click", () => {
-  const next = getNextClass();
-  const el = document.getElementById("nextResult");
-
-  if (!next) {
-    el.innerHTML = "<p>No more classes today.</p>";
-    return;
-  }
-
-  el.innerHTML = `
-    <div class="session">
-      <strong>${next.title}</strong><br>
-      ${next.start}–${next.end}<br>
-      ${next.location}
-    </div>
-  `;
-});
-
-loadTimetable();
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js");
   });
 }
