@@ -24,7 +24,6 @@ button, select {
   padding: 12px;
   font-size: 16px;
   margin-top: 8px;
-  margin-bottom: 12px;
 }
 
 .session {
@@ -43,7 +42,6 @@ button, select {
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 12px;
-  box-sizing: border-box;
 }
 
 .collapsible-content {
@@ -51,26 +49,9 @@ button, select {
   max-height: 0;
   margin: 0;
   padding: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  transition: max-height 1s ease;
+  transition: max-height 1s ease-out;
 }
 
-.filters-card-inner {
-  transform-origin: top;
-  opacity: 0;
-  transform: scaleY(1);
-  border-radius: 16px;
-  margin: 0 0 16px 0;
-  transition:
-    transform 1s ease,
-    opacity 1s ease,
-    border-radius 1s ease;
-}
-
-.collapsible-content.open .filters-card-inner {
-  opacity: 1;
-  transform: scaleY(1);
-  border-radius: 16px;
+.collapsible-content .card {
+  margin-top: 0;
 }
