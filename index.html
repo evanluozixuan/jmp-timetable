@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MEDI Timetable</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./style.css" />
   <meta name="theme-color" content="#0f172a" />
 </head>
 <body>
@@ -13,23 +13,34 @@
     <h1>MEDI Timetable</h1>
 
     <section class="card">
-      <label for="groupSelect">Your campus</label>
-      <select id=" "></select>
-    </section>
+      <h2>Your filters</h2>
 
-    <section class="card">
-      <label for="groupSelect">Your year</label>
-      <select id=" "></select>
-    </section>
-    
-    <section class="card">
-      <label for="groupSelect">Your PBL group</label>
-      <select id="groupSelect"></select>
-    </section>
+      <label for="campusSelect">Campus</label>
+      <select id="campusSelect">
+        <option value="Callaghan">Callaghan</option>
+        <option value="Gosford">Gosford</option>
+      </select>
 
-    <section class="card">
-      <label for="groupSelect">Your Clinical group</label>
-      <select id=" "></select>
+      <label for="yearSelect">Year</label>
+      <select id="yearSelect">
+        <option value="1">Year 1</option>
+        <option value="2">Year 2</option>
+      </select>
+
+      <label for="pblSelect">PBL Group</label>
+      <select id="pblSelect">
+        <option value="A">A</option>
+        <option value="B">B</option>
+      </select>
+
+      <label for="clinicalSelect">Clinical Group</label>
+      <select id="clinicalSelect">
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+
+      <button id="saveFiltersBtn">Save filters</button>
+      <p id="saveStatus"></p>
     </section>
 
     <section class="card">
@@ -43,6 +54,6 @@
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
