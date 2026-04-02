@@ -47,9 +47,11 @@ button, select {
 .collapsible-content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 1s ease-out;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease-out;
 }
 
-.collapsible.active {
-  margin-bottom: 12px;
+.collapsible-content .card {
+  margin-top: 0;
 }
