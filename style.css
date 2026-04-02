@@ -41,15 +41,15 @@ button, select {
   text-align: left;
   font-size: 16px;
   cursor: pointer;
-  margin-bottom: 12px;
+  margin-bottom: 3px;
 }
 
 .collapsible-content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.25s ease-out;
+  transition: max-height 0.5s ease-out;
 }
 
 .collapsible.active {
-  margin-bottom: 12px;
+  margin-bottom: 3px;
 }
