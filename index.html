@@ -13,24 +13,22 @@
     <h1>jmp timetable</h1>
     <h5>by evan</h5>
 
-    <button class="collapsible">Open Collapsible</button>
-    <div class="card">
+    <button class="collapsible" id="filtersToggleBtn" type="button">filters</button>
+
+    <div class="card collapsible-content" id="filtersCard">
       <label for="campusSelect">campus</label>
-      
       <select id="campusSelect">
         <option value="Callaghan">callaghan</option>
         <option value="Central Coast">central coast</option>
       </select>
 
       <label for="yearSelect">year</label>
-      
       <select id="yearSelect">
         <option value="1">year 1</option>
         <option value="2">year 2</option>
       </select>
 
       <label for="pblSelect">pbl group</label>
-      
       <select id="pblSelect">
         <option value="A">a</option>
         <option value="B">b</option>
@@ -55,7 +53,6 @@
       </select>
 
       <label for="clinicalSelect">clinical group</label>
-      
       <select id="clinicalSelect">
         <option value="A">a</option>
         <option value="B">b</option>
@@ -99,7 +96,7 @@
         <option value="20">20</option>
       </select>
 
-      <button id="saveFiltersBtn">Save filters</button>
+      <button id="saveFiltersBtn" type="button">Save filters</button>
       <p id="saveStatus"></p>
     </div>
 
@@ -116,20 +113,18 @@
 
   <script src="./app.js"></script>
   <script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-  
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
+    const coll = document.getElementById("filtersToggleBtn");
+    const content = document.getElementById("filtersCard");
+
+    coll.addEventListener("click", function () {
       this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
+
+      if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
-      } 
+      }
     });
-  }
   </script>
 </body>
-</html></html>
+</html>
