@@ -56,6 +56,7 @@ function saveProfile() {
   const filtersCard = document.getElementById("filtersCard");
 
   toggleBtn.classList.remove("active");
+  filtersCard.classList.remove("open");
   filtersCard.style.maxHeight = null;
 }
 
