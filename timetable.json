@@ -1,13 +1,14 @@
-[
+
   {
-    "date": "2026-03-30",
-    "start": "09:00",
-    "end": "10:30",
-    "title": "Lecture",
-    "location": "GP201",
-    "groupType": "all",
-    "groupValue": "all"
-  },
+    "date": "2026-04-3",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL A"
+  }
+]
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -15,6 +16,86 @@
     "title": "Tutorial",
     "location": "CT224",
     "groupType": "pbl",
-    "groupValue": "PBL A"
+    "groupValue": "PBL B"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL C"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL D"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL E"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL F"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL G"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL H"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL I"
+  }
+]
+  {
+    "date": "2026-03-30",
+    "start": "13:30",
+    "end": "15:00",
+    "title": "Tutorial",
+    "location": "CT224",
+    "groupType": "pbl",
+    "groupValue": "PBL J"
   }
 ]
