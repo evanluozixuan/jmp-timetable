@@ -123,7 +123,7 @@ function renderSession(item) {
     <div class="session">
       <strong>${item.title} ${item.type}</strong><br>
       ${item.date}<br>
-      ${item.start} – ${item.end}<br>
+      ${item.start}–${item.end}<br>
       ${item.location}<br>
       ${item.attendance}<br>
     </div>
