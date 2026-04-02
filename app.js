@@ -1,8 +1,8 @@
 let timetable = [];
 
 const defaultProfile = {
-  campus: "Callaghan",
-  year: 1,
+  campus: "Central Coast",
+  year: 2,
   pblGroup: "A",
   clinicalGroup: "A"
 };
@@ -75,15 +75,15 @@ function timeToMinutes(t) {
   return h * 60 + m;
 }
 
-function includesFilter(values, selectedValue) {
-  return Array.isArray(values) && values.includes(selectedValue);
+function matchesWildcard(value, selectedValue) {
+  return value === "all" || value === selectedValue;
 }
 
 function matchesProfile(item, profile) {
-  const campusOk = includesFilter(item.campus, profile.campus);
-  const yearOk = Array.isArray(item.year) && item.year.includes(profile.year);
-  const pblOk = includesFilter(item.pblGroups, profile.pblGroup);
-  const clinicalOk = includesFilter(item.clinicalGroups, profile.clinicalGroup);
+  const campusOk = item.campus === profile.campus;
+  const yearOk = Number(item.year) === Number(profile.year);
+  const pblOk = matchesWildcard(item.pblGroups, profile.pblGroup);
+  const clinicalOk = matchesWildcard(item.clinicalGroups, profile.clinicalGroup);
 
   return campusOk && yearOk && pblOk && clinicalOk;
 }
@@ -125,7 +125,9 @@ function renderSession(item) {
       ${item.type}<br>
       ${item.date}<br>
       ${item.start}–${item.end}<br>
-      ${item.location}
+      ${item.location}<br>
+      ${item.campus}<br>
+      Attendance: ${item.attendance}
     </div>
   `;
 }
