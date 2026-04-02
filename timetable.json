@@ -7,7 +7,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL A"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -16,7 +16,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL B"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -25,7 +25,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL C"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -34,7 +34,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL D"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -43,7 +43,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL E"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -52,7 +52,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL F"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -61,7 +61,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL G"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -70,7 +70,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL H"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -79,7 +79,7 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL I"
-  }
+  },
   {
     "date": "2026-03-30",
     "start": "13:30",
@@ -88,5 +88,5 @@
     "location": "CT224",
     "groupType": "pbl",
     "groupValue": "PBL J"
-  }
+  },
 ]
