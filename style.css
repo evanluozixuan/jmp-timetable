@@ -23,7 +23,8 @@ body {
   margin: 0 0 8px 0;
 }
 
-.card p {
+#nextResult p,
+#todayResult p {
   margin: 0;
 }
 
