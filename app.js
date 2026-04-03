@@ -1,8 +1,8 @@
 let timetable = [];
 
 const defaultProfile = {
-  campus: "Callaghan",
-  year: 1,
+  campus: "Central Coast",
+  year: 2,
   pblGroup: "A",
   clinicalGroup: "A"
 };
@@ -11,6 +11,11 @@ let userProfile = loadProfile();
 
 const toggleBtn = document.getElementById("filtersToggleBtn");
 const filtersCard = document.getElementById("filtersCard");
+const campusSelect = document.getElementById("campusSelect");
+const yearSelect = document.getElementById("yearSelect");
+const pblSelect = document.getElementById("pblSelect");
+const clinicalSelect = document.getElementById("clinicalSelect");
+const saveFiltersBtn = document.getElementById("saveFiltersBtn");
 
 function openFilters() {
   toggleBtn.classList.add("active");
@@ -40,7 +45,6 @@ async function loadTimetable() {
     refreshResults();
 
     const savedProfile = localStorage.getItem("userProfile");
-
     if (!savedProfile) {
       openFilters();
     } else {
@@ -70,11 +74,27 @@ function loadProfile() {
 
 function getCurrentProfileFromUI() {
   return {
-    campus: document.getElementById("campusSelect").value,
-    year: Number(document.getElementById("yearSelect").value),
-    pblGroup: document.getElementById("pblSelect").value,
-    clinicalGroup: document.getElementById("clinicalSelect").value
+    campus: campusSelect.value,
+    year: Number(yearSelect.value),
+    pblGroup: pblSelect.value,
+    clinicalGroup: clinicalSelect.value
   };
+}
+
+function populateFilterUI() {
+  campusSelect.value = userProfile.campus;
+  yearSelect.value = String(userProfile.year);
+  pblSelect.value = userProfile.pblGroup;
+  clinicalSelect.value = userProfile.clinicalGroup;
+}
+
+function previewFilters() {
+  userProfile = getCurrentProfileFromUI();
+  refreshResults();
+
+  if (filtersCard.classList.contains("open")) {
+    filtersCard.style.maxHeight = filtersCard.scrollHeight + "px";
+  }
 }
 
 function saveProfile() {
@@ -82,23 +102,6 @@ function saveProfile() {
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
   refreshResults();
   closeFilters();
-}
-
-function populateFilterUI() {
-  document.getElementById("campusSelect").value = userProfile.campus;
-  document.getElementById("yearSelect").value = String(userProfile.year);
-  document.getElementById("pblSelect").value = userProfile.pblGroup;
-  document.getElementById("clinicalSelect").value = userProfile.clinicalGroup;
-}
-
-function handleFilterChange() {
-  userProfile = getCurrentProfileFromUI();
-  document.getElementById("saveStatus").textContent = "";
-  refreshResults();
-
-  if (filtersCard.classList.contains("open")) {
-    filtersCard.style.maxHeight = filtersCard.scrollHeight + "px";
-  }
 }
 
 function getTodayString() {
@@ -128,7 +131,6 @@ function matchesProfile(item, profile) {
   const yearOk = Number(item.year) === Number(profile.year);
   const pblOk = matchesWildcard(item.pblGroups, profile.pblGroup);
   const clinicalOk = matchesWildcard(item.clinicalGroups, profile.clinicalGroup);
-
   return campusOk && yearOk && pblOk && clinicalOk;
 }
 
@@ -180,7 +182,7 @@ function showTodaysClasses() {
   const todays = getTodaysClasses();
 
   if (todays.length === 0) {
-    todayResult.innerHTML = "<p>no classes today for your selected filters.</p>";
+    todayResult.innerHTML = "<p>No classes today for your selected filters.</p>";
     return;
   }
 
@@ -192,7 +194,7 @@ function showNextClass() {
   const next = getNextUpcomingClass();
 
   if (!next) {
-    nextResult.innerHTML = "<p>no upcoming classes for your selected filters.</p>";
+    nextResult.innerHTML = "<p>No upcoming classes for your selected filters.</p>";
     return;
   }
 
@@ -204,11 +206,11 @@ function refreshResults() {
   showTodaysClasses();
 }
 
-document.getElementById("saveFiltersBtn").addEventListener("click", saveProfile);
-document.getElementById("campusSelect").addEventListener("change", handleFilterChange);
-document.getElementById("yearSelect").addEventListener("change", handleFilterChange);
-document.getElementById("pblSelect").addEventListener("change", handleFilterChange);
-document.getElementById("clinicalSelect").addEventListener("change", handleFilterChange);
+campusSelect.addEventListener("change", previewFilters);
+yearSelect.addEventListener("change", previewFilters);
+pblSelect.addEventListener("change", previewFilters);
+clinicalSelect.addEventListener("change", previewFilters);
+saveFiltersBtn.addEventListener("click", saveProfile);
 
 loadTimetable();
 
