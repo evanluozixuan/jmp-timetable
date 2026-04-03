@@ -12,16 +12,11 @@ let userProfile = loadProfile();
 async function loadTimetable() {
   try {
     const res = await fetch("./timetable.json");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     timetable = await res.json();
     populateFilterUI();
     refreshResults();
   } catch (err) {
     console.error("Failed to load timetable:", err);
-    document.getElementById("nextResult").innerHTML =
-      "<p>Failed to load timetable.</p>";
-    document.getElementById("todayResult").innerHTML =
-      "<p>Check that timetable.json exists and is valid.</p>";
   }
 }
 
@@ -56,6 +51,13 @@ function saveProfile() {
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
   document.getElementById("saveStatus").textContent = "Filters saved.";
   refreshResults();
+
+  const toggleBtn = document.getElementById("filtersToggleBtn");
+  const filtersCard = document.getElementById("filtersCard");
+
+  toggleBtn.classList.remove("active");
+  filtersCard.classList.remove("open");
+  filtersCard.style.maxHeight = null;
 }
 
 function populateFilterUI() {
@@ -98,6 +100,7 @@ function matchesProfile(item, profile) {
   const yearOk = Number(item.year) === Number(profile.year);
   const pblOk = matchesWildcard(item.pblGroups, profile.pblGroup);
   const clinicalOk = matchesWildcard(item.clinicalGroups, profile.clinicalGroup);
+
   return campusOk && yearOk && pblOk && clinicalOk;
 }
 
@@ -134,7 +137,8 @@ function getNextUpcomingClass() {
 function renderSession(item) {
   return `
     <div class="session">
-      <strong>${item.title} ${item.type}</strong><br>
+      <strong>${item.title}</strong><br>
+      ${item.type}<br>
       ${item.date}<br>
       ${item.start}–${item.end}<br>
       ${item.location}<br>
