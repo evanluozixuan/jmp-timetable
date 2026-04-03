@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JMP Timetable</title>
+  <title>jmp timetable</title>
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
   <meta name="theme-color" content="#0f172a" />
@@ -11,24 +11,24 @@
 <body>
   <main class="app">
     <h1>jmp timetable</h1>
-    <h4>by evan</h4>
+    <h5>by evan</h5>
 
     <button class="collapsible" id="filtersToggleBtn" type="button">filters</button>
 
     <div class="collapsible-content" id="filtersCard">
-      <select class="card">
+      <div class="card filters-card-inner">
         <label for="campusSelect">campus</label>
         <select id="campusSelect">
           <option value="Callaghan">callaghan</option>
           <option value="Central Coast">central coast</option>
         </select>
-
+  
         <label for="yearSelect">year</label>
         <select id="yearSelect">
-          <option value="1">1</option>
-          <option value="2">2</option>
+          <option value="1">year 1</option>
+          <option value="2">year 2</option>
         </select>
-
+  
         <label for="pblSelect">pbl group</label>
         <select id="pblSelect">
           <option value="A">a</option>
@@ -52,7 +52,7 @@
           <option value="S">s</option>
           <option value="T">t</option>
         </select>
-
+  
         <label for="clinicalSelect">clinical group</label>
         <select id="clinicalSelect">
           <option value="A">a</option>
@@ -62,6 +62,86 @@
           <option value="E">e</option>
           <option value="F">f</option>
           <option value="G">g</option>
+          <option value="H">h</option>
+          <option value="I">i</option>
+          <option value="J">j</option>
+          <option value="K">k</option>
+          <option value="L">l</option>
+          <option value="M">m</option>
+          <option value="N">n</option>
+          <option value="O">o</option>
+          <option value="P">p</option>
+          <option value="Q">q</option>
+          <option value="R">r</option>
+          <option value="S">s</option>
+          <option value="T">t</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
+  
+        <button id="saveFiltersBtn" type="button">Save filters</button>
+        <p id="saveStatus"></p>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>Next class</h2>
+      <div id="nextResult"></div>
+    </section>
+
+    <section class="card">
+      <h2>Today's classes</h2>
+      <div id="todayResult"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+  <script>
+  const coll = document.getElementById("filtersToggleBtn");
+  const content = document.getElementById("filtersCard");
+
+  function openFilters() {
+    coll.classList.add("active");
+    content.classList.add("open");
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+
+  function closeFilters() {
+    coll.classList.remove("active");
+    content.classList.remove("open");
+    content.style.maxHeight = null;
+  }
+
+  coll.addEventListener("click", function () {
+    if (content.classList.contains("open")) {
+      closeFilters();
+    } else {
+      openFilters();
+    }
+  });
+
+  openFilters();
+</script>
+</body>
+</html>
           <option value="H">h</option>
           <option value="I">i</option>
           <option value="J">j</option>
