@@ -39,11 +39,10 @@ async function loadTimetable() {
     populateFilterUI();
     refreshResults();
 
-    const hasOpenedFiltersBefore = localStorage.getItem("hasOpenedFiltersBefore");
+    const savedProfile = localStorage.getItem("userProfile");
 
-    if (!hasOpenedFiltersBefore) {
+    if (!savedProfile) {
       openFilters();
-      localStorage.setItem("hasOpenedFiltersBefore", "true");
     } else {
       closeFilters();
     }
