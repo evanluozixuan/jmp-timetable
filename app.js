@@ -73,7 +73,6 @@ function getCurrentProfileFromUI() {
 function saveProfile() {
   userProfile = getCurrentProfileFromUI();
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
-  document.getElementById("saveStatus").textContent = "Filters saved.";
   refreshResults();
   closeFilters();
 }
