@@ -62,7 +62,7 @@ button, select {
   opacity: 0;
   transform: scaleY(1);
   border-radius: 16px;
-  margin: 16px;
+  margin: 16px 0;
   transition:
     transform 1s ease,
     opacity 1s ease,
