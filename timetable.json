@@ -106,7 +106,10 @@
   {
     "date": "2026-04-20",
     "start": "13:00",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Radiology",
     "type": "Lecture",
     "location": "GO93.08.56",
@@ -795,7 +798,10 @@
   {
     "date": "2026-04-22",
     "start": "15:30",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "MCQ",
     "type": "EXAM",
     "location": "Online - Canvas",
@@ -808,7 +814,10 @@
   {
     "date": "2026-04-23",
     "start": "09:00",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Anatomy",
     "type": "Lecture",
     "location": "Prerecoding on Canvas Panopto",
@@ -1133,7 +1142,10 @@
   {
     "date": "2026-04-24",
     "start": "09:30",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Pathology",
     "type": "Lecture",
     "location": "2026 ZOOM",
@@ -1159,7 +1171,10 @@
   {
     "date": "2026-04-24",
     "start": "Self Directed",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Physiology",
     "type": "Lecture",
     "location": "Prerecoding on Canvas Panopto",
@@ -1171,7 +1186,10 @@
   {
     "date": "2026-04-24",
     "start": "Self Directed",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Neurology",
     "type": "Seminar",
     "location": "Prerecoding on Canvas Panopto",
@@ -1989,7 +2007,10 @@
   {
     "date": "2026-04-30",
     "start": "09:00",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Histology",
     "type": "Lecture",
     "location": "2026 ZOOM",
@@ -2002,7 +2023,10 @@
   {
     "date": "2026-04-30",
     "start": "10:00",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Histology",
     "type": "Online Lab",
     "location": "2026 ZOOM",
@@ -2288,7 +2312,10 @@
   {
     "date": "2026-05-01",
     "start": "08:00",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Physiology",
     "type": "Lecture",
     "location": "Prerecoding on Canvas Panopto",
@@ -2301,7 +2328,10 @@
   {
     "date": "2026-05-01",
     "start": "09:00",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Biochemistry",
     "type": "Lecture",
     "location": "2026 ZOOM",
@@ -2314,7 +2344,10 @@
   {
     "date": "2026-05-01",
     "start": "10:30",
-    "campus": "Callaghan/Central Coast",
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "Pharmacology",
     "type": "Lecture",
     "location": "2026 ZOOM",
