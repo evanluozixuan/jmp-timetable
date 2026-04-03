@@ -9,12 +9,36 @@ const defaultProfile = {
 
 let userProfile = loadProfile();
 
+const toggleBtn = document.getElementById("filtersToggleBtn");
+const filtersCard = document.getElementById("filtersCard");
+
+function openFilters() {
+  toggleBtn.classList.add("active");
+  filtersCard.classList.add("open");
+  filtersCard.style.maxHeight = filtersCard.scrollHeight + "px";
+}
+
+function closeFilters() {
+  toggleBtn.classList.remove("active");
+  filtersCard.classList.remove("open");
+  filtersCard.style.maxHeight = "0px";
+}
+
+toggleBtn.addEventListener("click", () => {
+  if (filtersCard.classList.contains("open")) {
+    closeFilters();
+  } else {
+    openFilters();
+  }
+});
+
 async function loadTimetable() {
   try {
     const res = await fetch("./timetable.json");
     timetable = await res.json();
     populateFilterUI();
     refreshResults();
+    openFilters();
   } catch (err) {
     console.error("Failed to load timetable:", err);
   }
@@ -51,13 +75,7 @@ function saveProfile() {
   localStorage.setItem("userProfile", JSON.stringify(userProfile));
   document.getElementById("saveStatus").textContent = "Filters saved.";
   refreshResults();
-
-  const toggleBtn = document.getElementById("filtersToggleBtn");
-  const filtersCard = document.getElementById("filtersCard");
-
-  toggleBtn.classList.remove("active");
-  filtersCard.classList.remove("open");
-  filtersCard.style.maxHeight = null;
+  closeFilters();
 }
 
 function populateFilterUI() {
@@ -71,6 +89,10 @@ function handleFilterChange() {
   userProfile = getCurrentProfileFromUI();
   document.getElementById("saveStatus").textContent = "";
   refreshResults();
+
+  if (filtersCard.classList.contains("open")) {
+    filtersCard.style.maxHeight = filtersCard.scrollHeight + "px";
+  }
 }
 
 function getTodayString() {
