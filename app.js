@@ -127,7 +127,9 @@ function matchesWildcard(value, selectedValue) {
 }
 
 function matchesProfile(item, profile) {
-  const campusOk = item.campus === profile.campus;
+  const campusOk = Array.isArray(item.campus)
+    ? item.campus.includes(profile.campus)
+    : item.campus === profile.campus;
   const yearOk = Number(item.year) === Number(profile.year);
   const pblOk = matchesWildcard(item.pblGroups, profile.pblGroup);
   const clinicalOk = matchesWildcard(item.clinicalGroups, profile.clinicalGroup);
