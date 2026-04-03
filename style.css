@@ -53,19 +53,19 @@ button, select {
   background: transparent;
   box-shadow: none;
   border-radius: 0;
-  transition: max-height 0.35s ease;
+  transition: max-height 1s ease;
 }
 
 .filters-card-inner {
   transform-origin: top;
   opacity: 0;
-  transform: scaleY(0.96);
+  transform: scaleY(1);
   border-radius: 16px;
   margin: 0 0 16px 0;
   transition:
-    transform 0.35s ease,
-    opacity 0.25s ease,
-    border-radius 0.35s ease;
+    transform 1s ease,
+    opacity 1s ease,
+    border-radius 1s ease;
 }
 
 .collapsible-content.open .filters-card-inner {
