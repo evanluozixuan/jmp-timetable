@@ -173,7 +173,7 @@ function showTodaysClasses() {
   const todays = getTodaysClasses();
 
   if (todays.length === 0) {
-    todayResult.innerHTML = "<p>No classes today for your selected filters.</p>";
+    todayResult.innerHTML = "<div>No classes today for your selected filters.</div>";
     return;
   }
 
@@ -185,7 +185,7 @@ function showNextClass() {
   const next = getNextUpcomingClass();
 
   if (!next) {
-    nextResult.innerHTML = "<p>No upcoming classes found for your selected filters.</p>";
+    nextResult.innerHTML = "<div>No upcoming classes for your selected filters.</div>";
     return;
   }
 
