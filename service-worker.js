@@ -1,5 +1,8 @@
-const CACHE_NAME = "jmp-timetable-v1";
-const STATIC_ASSETS = [
+const CACHE_NAME = "jmp-timetable-v2";
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./app.js",
   "./style.css",
   "./manifest.json",
   "./icons/icon-192.png",
@@ -8,8 +11,9 @@ const STATIC_ASSETS = [
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS))
+    caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL))
   );
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", event => {
@@ -20,25 +24,22 @@ self.addEventListener("activate", event => {
           .filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
       )
-    )
+    ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
 
-  // Always try network first for HTML, JS, and timetable data
-  if (
-    url.pathname.endsWith("/") ||
-    url.pathname.endsWith("/index.html") ||
-    url.pathname.endsWith("/app.js") ||
-    url.pathname.endsWith("/timetable.json")
-  ) {
+  // Always try network first for timetable data
+  if (url.pathname.endsWith("/timetable.json")) {
     event.respondWith(
       fetch(event.request)
         .then(response => {
           const responseClone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseClone);
+          });
           return response;
         })
         .catch(() => caches.match(event.request))
@@ -46,8 +47,20 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  // Cache first for static assets
-  event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request))
-  );
+  // App shell: cache first
+  if (
+    url.pathname.endsWith("/") ||
+    url.pathname.endsWith("/index.html") ||
+    url.pathname.endsWith("/app.js") ||
+    url.pathname.endsWith("/style.css") ||
+    url.pathname.endsWith("/manifest.json") ||
+    url.pathname.endsWith(".png")
+  ) {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        return cached || fetch(event.request);
+      })
+    );
+    return;
+  }
 });
