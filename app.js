@@ -1,8 +1,8 @@
 let timetable = [];
 
 const defaultProfile = {
-  campus: "Central Coast",
-  year: 2,
+  campus: "Callaghan",
+  year: 1,
   pblGroup: "A",
   clinicalGroup: "A"
 };
