@@ -38,7 +38,15 @@ async function loadTimetable() {
     timetable = await res.json();
     populateFilterUI();
     refreshResults();
-    openFilters();
+
+    const hasOpenedFiltersBefore = localStorage.getItem("hasOpenedFiltersBefore");
+
+    if (!hasOpenedFiltersBefore) {
+      openFilters();
+      localStorage.setItem("hasOpenedFiltersBefore", "true");
+    } else {
+      closeFilters();
+    }
   } catch (err) {
     console.error("Failed to load timetable:", err);
   }
