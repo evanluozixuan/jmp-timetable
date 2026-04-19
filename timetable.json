@@ -1152,7 +1152,7 @@
     "year": 2,
     "pblGroups": "all",
     "clinicalGroups": "all",
-    "attendance": null,
+    "attendance": "Optional",
     "end": "10:30"
   },
   {
@@ -1167,36 +1167,6 @@
     "clinicalGroups": "all",
     "attendance": "Mandatory",
     "end": "15:30"
-  },
-  {
-    "date": "2026-04-24",
-    "start": "Self Directed",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Physiology",
-    "type": "Lecture",
-    "location": "Prerecoding on Canvas Panopto",
-    "year": 2,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": null
-  },
-  {
-    "date": "2026-04-24",
-    "start": "Self Directed",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Neurology",
-    "type": "Seminar",
-    "location": "Prerecoding on Canvas Panopto",
-    "year": 2,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": "Mandatory"
   },
   {
     "date": "2026-04-28",
@@ -2322,7 +2292,7 @@
     "year": 2,
     "pblGroups": "all",
     "clinicalGroups": "all",
-    "attendance": null,
+    "attendance": "Optional",
     "end": "09:00"
   },
   {
@@ -2338,7 +2308,7 @@
     "year": 2,
     "pblGroups": "all",
     "clinicalGroups": "all",
-    "attendance": null,
+    "attendance": "Optional",
     "end": "10:00"
   },
   {
@@ -2354,7 +2324,7 @@
     "year": 2,
     "pblGroups": "all",
     "clinicalGroups": "all",
-    "attendance": null,
+    "attendance": "Optional",
     "end": "11:30"
   },
   {
