@@ -155,32 +155,29 @@ function dateToLocalISO(date) {
   return `${year}-${month}-${day}`;
 }
 
-function getWeekRangeMondayToSunday() {
+function getWeekRangeSundayToSaturday() {
   const today = new Date();
 
   // JS: Sunday = 0, Monday = 1, ..., Saturday = 6
   const day = today.getDay();
 
-  // Makes Monday the start of the week
-  const daysSinceMonday = day === 0 ? 6 : day - 1;
+  const sunday = new Date(today);
+  sunday.setDate(today.getDate() - day);
 
-  const monday = new Date(today);
-  monday.setDate(today.getDate() - daysSinceMonday);
-
-  const sunday = new Date(monday);
-  sunday.setDate(monday.getDate() + 6);
+  const saturday = new Date(sunday);
+  saturday.setDate(sunday.getDate() + 6);
 
   return {
-    monday: dateToLocalISO(monday),
-    sunday: dateToLocalISO(sunday)
+    sunday: dateToLocalISO(sunday),
+    saturday: dateToLocalISO(saturday)
   };
 }
 
 function getThisWeeksClasses() {
-  const { monday, sunday } = getWeekRangeMondayToSunday();
+  const { sunday, saturday } = getWeekRangeSundayToSaturday();
 
   return getFilteredClasses()
-    .filter(item => item.date >= monday && item.date <= sunday)
+    .filter(item => item.date >= sunday && item.date <= saturday)
     .sort((a, b) => {
       const dateCompare = a.date.localeCompare(b.date);
       if (dateCompare !== 0) return dateCompare;
