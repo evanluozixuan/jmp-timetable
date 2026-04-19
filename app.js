@@ -148,6 +148,46 @@ function getTodaysClasses() {
     .sort((a, b) => timeToMinutes(a.start) - timeToMinutes(b.start));
 }
 
+function dateToLocalISO(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function getWeekRangeMondayToSunday() {
+  const today = new Date();
+
+  // JS: Sunday = 0, Monday = 1, ..., Saturday = 6
+  const day = today.getDay();
+
+  // Makes Monday the start of the week
+  const daysSinceMonday = day === 0 ? 6 : day - 1;
+
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - daysSinceMonday);
+
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+
+  return {
+    monday: dateToLocalISO(monday),
+    sunday: dateToLocalISO(sunday)
+  };
+}
+
+function getThisWeeksClasses() {
+  const { monday, sunday } = getWeekRangeMondayToSunday();
+
+  return getFilteredClasses()
+    .filter(item => item.date >= monday && item.date <= sunday)
+    .sort((a, b) => {
+      const dateCompare = a.date.localeCompare(b.date);
+      if (dateCompare !== 0) return dateCompare;
+      return timeToMinutes(a.start) - timeToMinutes(b.start);
+    });
+}
+
 function getNextUpcomingClass() {
   const today = getTodayString();
   const nowMinutes = getNowMinutes();
@@ -188,6 +228,18 @@ function showTodaysClasses() {
   }
 
   todayResult.innerHTML = todays.map(renderSession).join("");
+}
+
+function showThisWeeksClasses() {
+  const weekResult = document.getElementById("weekResult");
+  const weeksClasses = getThisWeeksClasses();
+
+  if (weeksClasses.length === 0) {
+    weekResult.innerHTML = "<p>no classes this week for your selected filters.</p>";
+    return;
+  }
+
+  weekResult.innerHTML = weeksClasses.map(renderSession).join("");
 }
 
 function showNextClass() {
