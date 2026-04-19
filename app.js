@@ -203,9 +203,21 @@ function getNextUpcomingClass() {
   return null;
 }
 
-function renderSession(item) {
+function isSameClass(a, b) {
+  return (
+    a &&
+    b &&
+    a.date === b.date &&
+    a.start === b.start &&
+    a.end === b.end &&
+    a.title === b.title &&
+    a.location === b.location
+  );
+}
+
+function renderSession(item, extraClass = "") {
   return `
-    <div class="session">
+    <div class="session ${extraClass}">
       <strong>${item.title} ${item.type}</strong><br>
       ${item.date}<br>
       ${item.start}–${item.end}<br>
@@ -230,13 +242,19 @@ function showTodaysClasses() {
 function showThisWeeksClasses() {
   const weekResult = document.getElementById("weekResult");
   const weeksClasses = getThisWeeksClasses();
+  const nextClass = getNextUpcomingClass();
 
   if (weeksClasses.length === 0) {
     weekResult.innerHTML = "<p>no classes this week for your selected filters.</p>";
     return;
   }
 
-  weekResult.innerHTML = weeksClasses.map(renderSession).join("");
+  weekResult.innerHTML = weeksClasses
+    .map(item => {
+      const highlightClass = isSameClass(item, nextClass) ? "current-next-class" : "";
+      return renderSession(item, highlightClass);
+    })
+    .join("");
 }
 
 function showNextClass() {
