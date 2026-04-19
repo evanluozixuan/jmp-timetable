@@ -83,3 +83,8 @@ button, select {
   transform: scaleY(1);
   border-radius: 16px;
 }
+
+.current-next-class {
+  background: #dcfce7;
+  border: 1px solid #22c55e;
+}
