@@ -1,4 +1,4 @@
-const CACHE_NAME = "jmp-timetable-v2";
+const CACHE_NAME = "jmp-timetable-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
