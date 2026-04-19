@@ -254,6 +254,7 @@ function showNextClass() {
 function refreshResults() {
   showNextClass();
   showTodaysClasses();
+  showThisWeeksClasses();
 }
 
 campusSelect.addEventListener("change", previewFilters);
