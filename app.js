@@ -152,7 +152,7 @@ function dateToLocalISO(date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const day = String(date.getDate()).padStart(2, "0");
-  return `${day}/${month}/${year}`;
+  return `${year}-${month}-${day}`;
 }
 
 function getWeekRangeSundayToSaturday() {
@@ -219,8 +219,8 @@ function renderSession(item, extraClass = "") {
   return `
     <div class="session ${extraClass}">
       <strong>${item.title} ${item.type}</strong><br>
-      ${item.date}<br>
-      ${item.start}–${item.end}<br>
+      ${item.date} ${item.day}<br>
+      ${item.start} - ${item.end}<br>
       ${item.location}<br>
       ${item.attendance}<br>
     </div>
