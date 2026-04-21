@@ -215,11 +215,31 @@ function isSameClass(a, b) {
   );
 }
 
+function formatDateDDMMYYYY(isoDate) {
+  if (!isoDate) return "";
+
+  const [yyyy, mm, dd] = isoDate.split("-");
+  return `${dd}/${mm}/${yyyy}`;
+}
+
+function getDayName(isoDate) {
+  if (!isoDate) return "";
+
+  const date = new Date(`${isoDate}T00:00:00`);
+  return date.toLocaleDateString("en-AU", {
+    weekday: "long",
+    timeZone: "Australia/Sydney"
+  });
+}
+
 function renderSession(item, extraClass = "") {
+  const displayDate = formatDateDDMMYYYY(item.date);
+  const displayDay = item.day || getDayName(item.date);
+
   return `
     <div class="session ${extraClass}">
       <strong>${item.title} ${item.type}</strong><br>
-      ${item.date} ${item.day}<br>
+      ${displayDate} ${displayDay}<br>
       ${item.start} - ${item.end}<br>
       ${item.location}<br>
       ${item.attendance}<br>
