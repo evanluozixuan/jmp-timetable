@@ -227,7 +227,7 @@ function getDayName(isoDate) {
 
   const date = new Date(`${isoDate}T00:00:00`);
   return date.toLocaleDateString("en-AU", {
-    weekday: "long",
+    weekday: "short",
     timeZone: "Australia/Sydney"
   });
 }
