@@ -32,7 +32,7 @@ jobs:
           if git diff --quiet; then
             echo "No changes to commit"
           else
-            git add timetable_y1.json
+            git add timetable.json
             git commit -m "Remove past timetable events"
             git push
           fi
