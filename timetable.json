@@ -852,7 +852,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "1",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -865,7 +865,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "2",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -982,7 +982,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "1",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -995,7 +995,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "2",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -1933,7 +1933,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "3",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -1946,7 +1946,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "4",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -2051,6 +2051,32 @@
     "year": 1,
     "pblGroups": "L",
     "clinicalGroups": "all",
+    "attendance": "Mandatory",
+    "end": "10:00"
+  },
+  {
+    "date": "2026-07-30",
+    "start": "10:30",
+    "campus": "Central Coast",
+    "title": "Clinical Skills (Comms)",
+    "type": "Tutorial",
+    "location": "GO93.08.60",
+    "year": 1,
+    "pblGroups": "all",
+    "clinicalGroups": "3",
+    "attendance": "Mandatory",
+    "end": "12:00"
+  },
+  {
+    "date": "2026-07-30",
+    "start": "08:30",
+    "campus": "Central Coast",
+    "title": "Clinical Skills",
+    "type": "Tutorial",
+    "location": "GO93.08.56",
+    "year": 1,
+    "pblGroups": "all",
+    "clinicalGroups": "4",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -3229,7 +3255,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "1",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -3242,7 +3268,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "2",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -3359,7 +3385,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "1",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -3372,7 +3398,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "2",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -4599,7 +4625,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "3",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -4612,7 +4638,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "4",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -4717,6 +4743,32 @@
     "year": 1,
     "pblGroups": "J",
     "clinicalGroups": "all",
+    "attendance": "Mandatory",
+    "end": "10:00"
+  },
+  {
+    "date": "2026-08-13",
+    "start": "10:30",
+    "campus": "Central Coast",
+    "title": "Clinical Skills (Comms)",
+    "type": "Tutorial",
+    "location": "GO93.08.60",
+    "year": 1,
+    "pblGroups": "all",
+    "clinicalGroups": "3",
+    "attendance": "Mandatory",
+    "end": "12:00"
+  },
+  {
+    "date": "2026-08-13",
+    "start": "08:30",
+    "campus": "Central Coast",
+    "title": "Clinical Skills",
+    "type": "Tutorial",
+    "location": "GO93.08.56",
+    "year": 1,
+    "pblGroups": "all",
+    "clinicalGroups": "4",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -6044,7 +6096,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "1",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -6057,7 +6109,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "2",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -6174,7 +6226,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "1",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -6187,7 +6239,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "2",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -7239,7 +7291,7 @@
     "location": "GO93.08.56",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "3",
     "attendance": "Mandatory",
     "end": "10:00"
   },
@@ -7252,7 +7304,7 @@
     "location": "GO93.08.60",
     "year": 1,
     "pblGroups": "all",
-    "clinicalGroups": "all",
+    "clinicalGroups": "4",
     "attendance": "Mandatory",
     "end": "12:00"
   },
@@ -7357,6 +7409,32 @@
     "year": 1,
     "pblGroups": "J",
     "clinicalGroups": "all",
+    "attendance": "Mandatory",
+    "end": "10:00"
+  },
+  {
+    "date": "2026-08-27",
+    "start": "10:30",
+    "campus": "Central Coast",
+    "title": "Clinical Skills (Comms)",
+    "type": "Tutorial",
+    "location": "GO93.08.60",
+    "year": 1,
+    "pblGroups": "all",
+    "clinicalGroups": "3",
+    "attendance": "Mandatory",
+    "end": "12:00"
+  },
+  {
+    "date": "2026-08-27",
+    "start": "08:30",
+    "campus": "Central Coast",
+    "title": "Clinical Skills",
+    "type": "Tutorial",
+    "location": "GO93.08.56",
+    "year": 1,
+    "pblGroups": "all",
+    "clinicalGroups": "4",
     "attendance": "Mandatory",
     "end": "10:00"
   },
