@@ -571,22 +571,6 @@
     "end": "14:30"
   },
   {
-    "date": "2026-07-21",
-    "start": "pmtobecompletedpriortoclinicalskills",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Clinical Skills",
-    "type": "Pre-recorded Lecture",
-    "location": "Canvas",
-    "year": 1,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": "Mandatory",
-    "end": ""
-  },
-  {
     "date": "2026-07-22",
     "start": "11:00",
     "campus": "Callaghan",
@@ -1365,22 +1349,6 @@
     "clinicalGroups": "all",
     "attendance": "Mandatory",
     "end": "13:00"
-  },
-  {
-    "date": "2026-07-24",
-    "start": "pm",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Seminar",
-    "type": "Prof Dev",
-    "location": "Panopto recording of UNE lecture",
-    "year": 1,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": "Optional",
-    "end": ""
   },
   {
     "date": "2026-07-27",
@@ -2436,22 +2404,6 @@
     "clinicalGroups": "all",
     "attendance": "Mandatory",
     "end": "13:00"
-  },
-  {
-    "date": "2026-07-31",
-    "start": "tobecompletedpriortomonday",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Anatomy",
-    "type": "Pre-recorded Lecture",
-    "location": "Canvas",
-    "year": 1,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": "Mandatory",
-    "end": ""
   },
   {
     "date": "2026-08-03",
@@ -3789,22 +3741,6 @@
     "end": "13:00"
   },
   {
-    "date": "2026-08-07",
-    "start": "tobecompletedpriortomonday",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Anatomy",
-    "type": "Pre-recorded Lecture",
-    "location": "Canvas",
-    "year": 1,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": "Mandatory",
-    "end": ""
-  },
-  {
     "date": "2026-08-10",
     "start": "09:00",
     "campus": "Callaghan",
@@ -4547,7 +4483,7 @@
     "year": 1,
     "pblGroups": "all",
     "clinicalGroups": "all",
-    "attendance": "The recording will be made available later in the week for those who have tutorials",
+    "attendance": "Optional",
     "end": "15:00"
   },
   {
@@ -5176,22 +5112,6 @@
     "clinicalGroups": "all",
     "attendance": "Mandatory",
     "end": "13:00"
-  },
-  {
-    "date": "2026-08-14",
-    "start": "tobecompletedpriortomonday",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
-    "title": "Anatomy",
-    "type": "Pre-recorded Lecture",
-    "location": "Canvas",
-    "year": 1,
-    "pblGroups": "all",
-    "clinicalGroups": "all",
-    "attendance": "Mandatory",
-    "end": ""
   },
   {
     "date": "2026-08-17",
