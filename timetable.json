@@ -1924,7 +1924,10 @@
   {
     "date": "2026-09-10",
     "start": "",
-    "campus": ["Callaghan","Central Coast"],
+    "campus": [
+      "Callaghan",
+      "Central Coast"
+    ],
     "title": "PCF",
     "type": "Forum",
     "location": "TBA",
