@@ -1923,19 +1923,16 @@
   },
   {
     "date": "2026-09-10",
-    "start": "",
-    "campus": [
-      "Callaghan",
-      "Central Coast"
-    ],
+    "start": "13:30",
+    "campus": "Callaghan",
     "title": "PCF",
     "type": "Forum",
-    "location": "TBA",
+    "location": "GP 201",
     "year": 1,
     "pblGroups": "all",
     "clinicalGroups": "all",
     "attendance": "Mandatory",
-    "end": ""
+    "end": "15:00"
   },
   {
     "date": "2026-09-11",
@@ -2530,7 +2527,7 @@
     "campus": "Callaghan",
     "title": "Clinical",
     "type": "Lecture",
-    "location": "TBA",
+    "location": "GP 201",
     "year": 1,
     "pblGroups": "all",
     "clinicalGroups": "all",
@@ -2543,7 +2540,7 @@
     "campus": "Central Coast",
     "title": "Clinical",
     "type": "Lecture",
-    "location": "TBA",
+    "location": "GO93.09.39",
     "year": 1,
     "pblGroups": "all",
     "clinicalGroups": "all",
